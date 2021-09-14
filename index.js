@@ -5,6 +5,9 @@
 
 //---------CONSTANTS!!!------------//
 const listAllMealCategories = "www.themealdb.com/api/json/v1/1/categories.php"
+const listAllByArea = "www.themealdb.com/api/json/v1/1/list.php?a=list"
+const listAllByIngredient = "www.themealdb.com/api/json/v1/1/list.php?i=list"
+
 const searchByFirstLetter = "www.themealdb.com/api/json/v1/1/search.php?f="
 const searchByName = "www.themealdb.com/api/json/v1/1/search.php?s="
 const searchByRandom = "www.themealdb.com/api/json/v1/1/random.php"

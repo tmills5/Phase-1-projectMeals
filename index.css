@@ -1,0 +1,27 @@
+body {
+    background-color: bisque;
+}
+
+/* ---------HEADER-------- */
+header {
+    background-color: grey;
+    text-align: center;
+}
+
+navbar {
+    background-color: red;
+    /* margin: 1rem; */
+}
+
+btn-primary {
+    margin: 10%;
+}
+
+
+/*----------CONTAINER-----------------*/
+
+
+/* ---------FOOTER------------------- */
+footer {
+    background-color: green;
+}
