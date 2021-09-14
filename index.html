@@ -16,16 +16,28 @@
            The Recipe Source
        </Header>
 
-       <navbar>
-           <button class="btn-primary">Categories</button>
-           <button class="btn-primary">Area</button>
-           <button class="btn-primary">Ingredients</button>
-           <button class="btn-primary">Random</button>
-       </navbar>
+       <nav>
+           <button class="btn-primary" id="categories-all-list">List By Categories</button>
+           <button class="btn-primary" id="area-all-list">List By Area</button>
+           <button class="btn-primary" id="ingredients-all-list">List By Ingredients</button>
+           <button class="btn-primary" id="random-list">Random</button>
+       </nav>
 
-       <div class="meal-container">
+       <div id="search-div">
+           <form id="search-form-name">
+               <input name="search-name" placeholder="Search by Name!">
+               <input type="submit" value="Search">
+           </form>
 
+           <form id="search-form-letter">
+                <input name="search-name" placeholder="Search by Letter!">
+                <input type="submit" value="Search">
+            </form>
        </div>
+
+       <div class="meal-container"></div>
+
+       <div class="meal-profile"></div>
 
         <footer>
             Lorem ipsum dolor sit amet, consectetur adip

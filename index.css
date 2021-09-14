@@ -8,9 +8,8 @@ header {
     text-align: center;
 }
 
-navbar {
+nav {
     background-color: red;
-    /* margin: 1rem; */
 }
 
 btn-primary {
@@ -24,4 +23,5 @@ btn-primary {
 /* ---------FOOTER------------------- */
 footer {
     background-color: green;
+    text-align: center;
 }
