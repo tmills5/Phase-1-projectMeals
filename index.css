@@ -18,7 +18,13 @@ btn-primary {
 
 
 /*----------CONTAINER-----------------*/
+ .meal-container {
+     margin: 2rem;
+ }
 
+ .categoryLi {
+     list-style-type: none;
+ }
 
 /* ---------FOOTER------------------- */
 footer {
