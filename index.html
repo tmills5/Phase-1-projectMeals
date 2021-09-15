@@ -17,22 +17,29 @@
        </Header>
 
        <nav>
-           <button class="btn-primary" id="categories-all-list">List By Categories</button>
+           <button class="btn-primary" id="categories-all-list">Categories!</button>
            <button class="btn-primary" id="area-all-list">List By Area</button>
-           <button class="btn-primary" id="ingredients-all-list">List By Ingredients</button>
+            <!-- <button class="btn-primary" id="ingredients-all-list">List By Ingredients</button> -->
            <button class="btn-primary" id="random-list">Random</button>
        </nav>
 
        <div id="search-div">
+
            <form id="search-form-name">
-               <input name="search-name" placeholder="Search by Name!">
+               <input name="search-name" placeholder="Search by Name...">
                <input type="submit" value="Search">
            </form>
 
-           <form id="search-form-letter">
-                <input name="search-name" placeholder="Search by Letter!">
+           <form id="filter-form-ingredient">
+                <input name="search-name" placeholder="What's in it..?">
                 <input type="submit" value="Search">
             </form>
+
+           <form id="search-form-letter">
+                <input name="search-name" placeholder="What does it start with..?">
+                <input type="submit" value="Search">
+            </form>
+
        </div>
 <hr>
        <div class="meal-container">
