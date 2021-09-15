@@ -26,6 +26,14 @@ btn-primary {
      list-style-type: none;
  }
 
+ h3 { 
+     color: blue;
+ }
+
+ p {
+     size: 18;
+ }
+
 /* ---------FOOTER------------------- */
 footer {
     background-color: green;
