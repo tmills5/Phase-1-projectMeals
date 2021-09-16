@@ -17,6 +17,8 @@ const singleRandom = "https://www.themealdb.com/api/json/v1/1/random.php"
 
 const filterByCategory = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
 const filterByArea = "http://www.themealdb.com/api/json/v1/1/filter.php?a="
+const filterByIngredientUrl = "http://www.themealdb.com/api/json/v1/1/filter.php?i="
+
 
 const categoriesAllBtn = document.getElementById("categories-all-list")
 const areaAllBtn = document.getElementById("area-all-list")
@@ -26,7 +28,7 @@ const randomAllBtn = document.getElementById("random-list")
 const categoryItem = document.getElementById("list-item")
 const categoryProfile = document.getElementById("meal-profile")
 
-const searchByname = document.getElementById("search-form-name")
+const searchByName = document.getElementById("search-form-name")
 const searchByFirstLetter = document.getElementById("search-form-letter")
 
 const filterByIngredient = document.getElementById('filter-form-ingredient')
@@ -133,6 +135,17 @@ const handleSearchByFirstLetterResults = (e) => {
         })
 }
 
+// const handleFilterIngredientResults = (e) => {
+//     resetPage()
+
+//     //debugger
+//     e.preventDefault()
+//     const term = e.target[0].value
+//     fetch(filterByIngredientUrl + term)
+//         .then(response => response.json())
+//         .then(results => { console.log(results)})
+// }
+
 
 //---------RENDER FUNCTIONS---------------------//
 
@@ -176,7 +189,7 @@ const renderAreaList = area => {
     areaLi.id = `${strArea}`
     areaLi.innerText = `${strArea}`
 
-//tryind to add meals to the DOM based on area----probably delete
+//trying to add meals to the DOM based on area----probably delete
     areaLi.addEventListener("click", function () {
         resetPage()
         //fetchFilterArea(area)
@@ -208,10 +221,10 @@ const resetPage = () => {
 //document.addEventListener('DOMContentLoaded', )
 categoriesAllBtn.addEventListener("click", fetchAllCategories)
 areaAllBtn.addEventListener("click", fetchAllAreas)
-// ingredientsAllBtn.addEventListener("click", fectchAllIngredients)
+// ingredientsAllBtn.addEventListener("click", fetchAllIngredients)
 randomAllBtn.addEventListener("click", fetchRandom)
 
-searchByname.addEventListener("submit", handleSearchNameResults)
+searchByName.addEventListener("submit", handleSearchNameResults)
 searchByFirstLetter.addEventListener('submit', handleSearchByFirstLetterResults)
 
-filterByIngredient.addEventListener('submit', handleFilterIngredientResults)
+//filterByIngredient.addEventListener('submit', handleFilterIngredientResults)
