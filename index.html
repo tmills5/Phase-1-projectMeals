@@ -13,19 +13,18 @@
 
     <body> 
        <Header>
-           The Recipe Source
-       </Header>
-
+           <h1>The Recipe Source</h1>
+       
        <nav>
            <button class="btn-primary" id="categories-all-list">Categories!</button>
-           <button class="btn-primary" id="area-all-list">List By Area</button>
+           <!-- <button class="btn-primary" id="area-all-list">List By Area</button> -->
             <!-- <button class="btn-primary" id="ingredients-all-list">List By Ingredients</button> -->
            <button class="btn-primary" id="random-list">Random</button>
        </nav>
 
        <div id="search-div">
 
-           <form id="search-form-name">
+           <form id="search-form-name" class="search-form">
                <input name="search-name" placeholder="Search by Name...">
                <input type="submit" value="Search">
            </form>
@@ -35,23 +34,27 @@
                 <input type="submit" value="Search">
             </form> -->
 
-           <form id="search-form-letter">
+           <form id="search-form-letter" class="search-form">
                 <input name="search-name" placeholder="What does it start with..?">
                 <input type="submit" value="Search">
             </form>
 
        </div>
+    </Header>
 <hr>
-       <div class="meal-container">
-           <ul id="list-item">
+    
+        <div class="meal-container">
+            <ul id="list-item">
 
-           </ul>
-       </div>
+            </ul>
+        </div>
 
-       <div id="meal-profile"></div>
+        <div id="meal-profile">
 
+        </div>
+   
         <footer>
-            Lorem ipsum dolor sit amet, consectetur adip
+            Merle Tyson Mills Flatiron School Phase-1 Project
         </footer>
     </body>
 </html>

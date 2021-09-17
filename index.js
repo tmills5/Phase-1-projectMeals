@@ -40,8 +40,10 @@ const filterByIngredient = document.getElementById('filter-form-ingredient')
 
 
 //---------EVENT HANDLERS / FETCH HANDLERS---------------//
-
-
+const changeBackgroundImage = () => {
+    const body = document.querySelector('body')
+    body.style.backgroundImage = 'url("https://media.fshoq.com/images/191/italian-salad-on-the-wooden-background-in-the-kitchen-191-medium.jpg")'
+}
 
 
 const fetchAllCategories = () => {
@@ -160,6 +162,7 @@ const renderListItem = category => {
         resetPage()
         const {strCategoryDescription, strCategoryThumb} = category
         const categoryDiv = document.createElement("div")
+        categoryDiv.className = "category-div"
         categoryDiv.innerHTML = `
     <h3>${strCategoryDescription}</h3>
     <img src=${strCategoryThumb}>`
@@ -172,41 +175,41 @@ const renderListItem = category => {
 const renderRandom = meal => {
     const { strMeal, strCategory, strArea, strInstructions, strMealThumb, strSource } = meal
     mealDiv = document.createElement("div")
-    mealDiv.id = "random-meal-div"
+    mealDiv.className = "random-meal-div"
     mealDiv.innerHTML =
         `<h1>${strMeal}</h1>
                 <h3>Origin: ${strArea} <br> Category: ${strCategory}</h3>
                 <a href=${strSource}>Full Recipe<a>
                 <p>${strInstructions}</p>
-                <img src=${strMealThumb}>`
+                <img src=${strMealThumb}>
+                <hr>`
+    Image.className = "img"
     categoryProfile.append(mealDiv)
 }
 
-const renderAreaList = area => {
-    const {strArea} = area
-    const areaLi = document.createElement("li")
-    areaLi.className = "areaLi"
-    areaLi.id = `${strArea}`
-    areaLi.innerText = `${strArea}`
+// const renderAreaList = area => {
+//     const {strArea} = area
+//     const areaLi = document.createElement("li")
+//     areaLi.className = "areaLi"
+//     areaLi.id = `${strArea}`
+//     areaLi.innerText = `${strArea}`
 
-//trying to add meals to the DOM based on area----probably delete
-    areaLi.addEventListener("click", function () {
-        resetPage()
-        //fetchFilterArea(area)
-        const {strArea} = area
-        const areaDiv = document.createElement("div")
-        areaDiv.id = `${strArea}`
-        areaDiv.innerHTML = `${strArea}`
-        categoryProfile.append(areaDiv)
-    })
-//
-    categoryItem.append(areaLi)
-
-}
+// //trying to add meals to the DOM based on area----probably delete
+//     areaLi.addEventListener("click", function () {
+//         resetPage()
+//         //fetchFilterArea(area)
+//         const {strArea} = area
+//         const areaDiv = document.createElement("div")
+//         areaDiv.id = `${strArea}`
+//         areaDiv.innerHTML = `${strArea}`
+//         categoryProfile.append(areaDiv)
+//     })
+//     categoryItem.append(areaLi)
+// }
 
 
 
-//----------HELPER FUNCTIONS-----------------------------//
+//-----------HELPER FUNCTIONS------------------//
 
 
 const resetPage = () => {
@@ -214,13 +217,11 @@ const resetPage = () => {
     categoryProfile.innerHTML = ""
 }
 
-
-
 //--------- Attach EVENT LISTENERS-----------------------//
 
 //document.addEventListener('DOMContentLoaded', )
 categoriesAllBtn.addEventListener("click", fetchAllCategories)
-areaAllBtn.addEventListener("click", fetchAllAreas)
+// areaAllBtn.addEventListener("click", fetchAllAreas)
 // ingredientsAllBtn.addEventListener("click", fetchAllIngredients)
 randomAllBtn.addEventListener("click", fetchRandom)
 

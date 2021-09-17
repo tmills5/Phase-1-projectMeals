@@ -1,19 +1,38 @@
 body {
-    background-color: bisque;
+    background-image: url("https://media.fshoq.com/images/191/italian-salad-on-the-wooden-background-in-the-kitchen-191-medium.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /* ---------HEADER-------- */
 header {
-    background-color: grey;
+    
+    text-align: left;
+    padding: 10px;
+}
+
+h1 {
     text-align: center;
+    font-family: cursive;
+    color: black;
 }
 
 nav {
-    background-color: red;
+    text-align: left;
 }
 
-btn-primary {
-    margin: 10%;
+#search-div {
+    padding: 5px
+}
+
+.search-form {
+    padding: 2px;
+}
+
+.btn-primary {
+    margin: 1rem;
+    text-align: left;
 }
 
 
@@ -37,8 +56,29 @@ btn-primary {
  .areaLi {
     list-style-type: none;
  }
+
+ .random-meal-div {
+     text-align: center;
+ }
+ 
+ img {
+    border-radius: 15% 50%;
+ }
+
+ .category-div {
+     text-align: center;
+ }
+
+ /* categoryLi {
+
+ } */
+
 /* ---------FOOTER------------------- */
 footer {
-    background-color: green;
+    background-color: #FBEEC1;
     text-align: center;
+    
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
