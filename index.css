@@ -1,13 +1,15 @@
 body {
-    background-image: url("https://media.fshoq.com/images/191/italian-salad-on-the-wooden-background-in-the-kitchen-191-medium.jpg");
-    background-repeat: no-repeat;
+    background-color: #FCF5F5
+    /* background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed; */
 }
 
 /* ---------HEADER-------- */
 header {
-    
+        background-image: url("https://media.fshoq.com/images/191/italian-salad-on-the-wooden-background-in-the-kitchen-191-medium.jpg");
+
+    /* background-color: ; */
     text-align: left;
     padding: 10px;
 }
@@ -15,15 +17,23 @@ header {
 h1 {
     text-align: center;
     font-family: cursive;
-    color: black;
+    color: red;
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+#header-text {
+    font-size: 4rem;
+    color: #FCF5F5;
 }
 
 nav {
-    text-align: left;
+    text-align: center;
 }
 
 #search-div {
-    padding: 5px
+    padding: 5px;
+    text-align: center;
 }
 
 .search-form {
@@ -37,6 +47,7 @@ nav {
 
 
 /*----------CONTAINER-----------------*/
+
  .meal-container {
      margin: 2rem;
  }
@@ -46,11 +57,13 @@ nav {
  }
 
  h3 { 
-     color: blue;
+     color: black;
+     font-size: 1.5em;
  }
 
  p {
-     size: 18;
+     size: 3rem;
+     color: black;
  }
 
  .areaLi {
@@ -63,15 +76,24 @@ nav {
  
  img {
     border-radius: 15% 50%;
+    max-width: 75%;
+    max-height: 75%;
+ }
+
+ #like-button {
+     margin: 2rem;
+     padding: 5px;
+ }
+
+ #dis-like-button {
+     margin: 2rem;
+     padding: 5px;
  }
 
  .category-div {
      text-align: center;
  }
 
- /* categoryLi {
-
- } */
 
 /* ---------FOOTER------------------- */
 footer {

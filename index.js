@@ -40,10 +40,6 @@ const filterByIngredient = document.getElementById('filter-form-ingredient')
 
 
 //---------EVENT HANDLERS / FETCH HANDLERS---------------//
-const changeBackgroundImage = () => {
-    const body = document.querySelector('body')
-    body.style.backgroundImage = 'url("https://media.fshoq.com/images/191/italian-salad-on-the-wooden-background-in-the-kitchen-191-medium.jpg")'
-}
 
 
 const fetchAllCategories = () => {
@@ -183,7 +179,12 @@ const renderRandom = meal => {
                 <p>${strInstructions}</p>
                 <img src=${strMealThumb}>
                 <hr>`
+
     Image.className = "img"
+    const likeButton = document.createElement("button")
+    likeButton.id = "like-button"
+    likeButton.innerHTML = "Like this recipe!!"
+    mealDiv.prepend(likeButton)
     categoryProfile.append(mealDiv)
 }
 
