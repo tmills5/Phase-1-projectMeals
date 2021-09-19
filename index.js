@@ -42,15 +42,17 @@ const filterByIngredient = document.getElementById('filter-form-ingredient')
 
 //---------EVENT HANDLERS / FETCH HANDLERS---------------//
 
-const renderQuote = () => {
-    fetch("https://zenquotes.io/api/random/") //trying to add random quote to landing page
+const fetchQuote = () => {
+    resetPage()
+
+    fetch("https://api.quotable.io/random?tags=inspirational") //trying to add random quote to landing page
         .then(response => response.json())
-        .then(quote => {
-           const quoteDiv = document.createElement("h4")
-           quoteDiv.innerText = `${quote}`
-           categoryProfile.append(quoteDiv)
-           
+        .then(quote => { //console.log(quote) //----WORKS!!!!!!!!
+                quoteStr = quote.content;
+                console.log(quoteStr)  //-------only quote returned--WORKS!!!
+               //renderQuote(quote) 
         })
+        
 }
 
 const fetchAllCategories = () => {
@@ -158,6 +160,15 @@ const handleSearchByFirstLetterResults = (e) => {
 
 //---------RENDER FUNCTIONS---------------------//
 
+// renderQuote = (quote) => {
+//     const {content} = quote;
+//     const quoteStr = document.createElement("h4")
+//     quoteStr.id = "quote-h4"
+//     quoteStr.innerText = `${content}`
+//     categoryProfile.append(quoteStr)
+
+// }
+
 const renderListItem = category => {
     const { strCategory, idCategory } = category;
     const categoryLi = document.createElement("li")
@@ -241,7 +252,7 @@ const resetPage = () => {
 
 //--------- Attach EVENT LISTENERS-----------------------//
 
-document.addEventListener('DOMContentLoaded', renderQuote)
+document.addEventListener('DOMContentLoaded', fetchQuote)
 categoriesAllBtn.addEventListener("click", fetchAllCategories)
 // areaAllBtn.addEventListener("click", fetchAllAreas)
 // ingredientsAllBtn.addEventListener("click", fetchAllIngredients)

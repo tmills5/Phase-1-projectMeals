@@ -48,6 +48,10 @@ nav {
 
 /*----------CONTAINER-----------------*/
 
+#quote-h4 {
+    color:black;
+}
+
  .meal-container {
      margin: 2rem;
  }
