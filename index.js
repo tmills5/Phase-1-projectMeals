@@ -42,6 +42,16 @@ const filterByIngredient = document.getElementById('filter-form-ingredient')
 
 //---------EVENT HANDLERS / FETCH HANDLERS---------------//
 
+const renderQuote = () => {
+    fetch("https://zenquotes.io/api/random/") //trying to add random quote to landing page
+        .then(response => response.json())
+        .then(quote => {
+           const quoteDiv = document.createElement("h4")
+           quoteDiv.innerText = `${quote}`
+           categoryProfile.append(quoteDiv)
+           
+        })
+}
 
 const fetchAllCategories = () => {
     //get request to the categories list url and render to page
@@ -231,7 +241,7 @@ const resetPage = () => {
 
 //--------- Attach EVENT LISTENERS-----------------------//
 
-//document.addEventListener('DOMContentLoaded', )
+document.addEventListener('DOMContentLoaded', renderQuote)
 categoriesAllBtn.addEventListener("click", fetchAllCategories)
 // areaAllBtn.addEventListener("click", fetchAllAreas)
 // ingredientsAllBtn.addEventListener("click", fetchAllIngredients)
