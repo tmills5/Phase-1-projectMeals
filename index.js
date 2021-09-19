@@ -24,6 +24,7 @@ const categoriesAllBtn = document.getElementById("categories-all-list")
 const areaAllBtn = document.getElementById("area-all-list")
 const ingredientsAllBtn = document.getElementById("ingredients-all-list")
 const randomAllBtn = document.getElementById("random-list")
+const likeButton = document.getElementById("like-button")
 
 const categoryItem = document.getElementById("list-item")
 const categoryProfile = document.getElementById("meal-profile")
@@ -112,7 +113,7 @@ const handleSearchNameResults = (e) => {
             results.forEach(result => {
                 renderRandom(result)
             })
-            e.target[0].value = ""  //resets the search form-coudn't figure out .reset() <--logs "term not a fxn"
+            e.target[0].value = ""  //resets the search form-couldn't figure out .reset() <--logs "term not a fxn"
         })
 }
 
@@ -168,6 +169,13 @@ const renderListItem = category => {
     categoryItem.append(categoryLi)
 }
 
+const handleLikes = (e) => {
+    //debugger
+    let numberLikes = e.target.innerText.slice(7)
+    numberLikes++
+    e.target.innerText = "Likes: " + numberLikes
+}
+
 const renderRandom = meal => {
     const { strMeal, strCategory, strArea, strInstructions, strMealThumb, strSource } = meal
     mealDiv = document.createElement("div")
@@ -183,8 +191,11 @@ const renderRandom = meal => {
     Image.className = "img"
     const likeButton = document.createElement("button")
     likeButton.id = "like-button"
-    likeButton.innerHTML = "Like this recipe!!"
+    likeButton.innerHTML = "Likes: 0"
+    likeButton.addEventListener("click", handleLikes)
+
     mealDiv.prepend(likeButton)
+
     categoryProfile.append(mealDiv)
 }
 
@@ -225,6 +236,8 @@ categoriesAllBtn.addEventListener("click", fetchAllCategories)
 // areaAllBtn.addEventListener("click", fetchAllAreas)
 // ingredientsAllBtn.addEventListener("click", fetchAllIngredients)
 randomAllBtn.addEventListener("click", fetchRandom)
+
+
 
 searchByName.addEventListener("submit", handleSearchNameResults)
 searchByFirstLetter.addEventListener('submit', handleSearchByFirstLetterResults)
