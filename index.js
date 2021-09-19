@@ -149,22 +149,20 @@ const handleSearchByFirstLetterResults = (e) => {
 
 //---------RENDER FUNCTIONS---------------------//
 
-renderQuote = (quote) => {
+renderQuote = () => {
     
         fetch("https://api.quotable.io/random?tags=inspirational") //trying to add random quote to landing page
             .then(response => response.json())
             .then(quote => { //console.log(quote) //----WORKS!!!!!!!!
-                    quoteStr = quote.content;
-                    console.log(quoteStr)  //-------only quote returned--WORKS!!!
+                    newQuote = quote.content;
+                    console.log(newQuote)  //-------only quote returned--WORKS!!!
                    //renderQuote(quote) 
-            })
-            
-
-    const {content} = quoteStr;
-    const quoteStr = document.createElement("h4")
-    quoteStr.id = "quote-h4"
-    quoteStr.innerText = `${content}`
-    categoryProfile.append(quoteStr)
+           
+                const quoteStr = document.createElement("h4")
+                quoteStr.id = "quote-h4"
+                quoteStr.innerText = newQuote
+                categoryProfile.append(quoteStr)
+    }) 
 }
 
 const renderListItem = category => {
@@ -250,7 +248,7 @@ const resetPage = () => {
 
 //--------- Attach EVENT LISTENERS-----------------------//
 
-document.addEventListener('DOMContentLoaded', fetchQuote)
+document.addEventListener('DOMContentLoaded', renderQuote()) //<--didn't work without () ask why?
 categoriesAllBtn.addEventListener("click", fetchAllCategories)
 // areaAllBtn.addEventListener("click", fetchAllAreas)
 // ingredientsAllBtn.addEventListener("click", fetchAllIngredients)
