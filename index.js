@@ -42,18 +42,7 @@ const filterByIngredient = document.getElementById('filter-form-ingredient')
 
 //---------EVENT HANDLERS / FETCH HANDLERS---------------//
 
-const fetchQuote = () => {
-    resetPage()
 
-    fetch("https://api.quotable.io/random?tags=inspirational") //trying to add random quote to landing page
-        .then(response => response.json())
-        .then(quote => { //console.log(quote) //----WORKS!!!!!!!!
-                quoteStr = quote.content;
-                console.log(quoteStr)  //-------only quote returned--WORKS!!!
-               //renderQuote(quote) 
-        })
-        
-}
 
 const fetchAllCategories = () => {
     //get request to the categories list url and render to page
@@ -160,14 +149,23 @@ const handleSearchByFirstLetterResults = (e) => {
 
 //---------RENDER FUNCTIONS---------------------//
 
-// renderQuote = (quote) => {
-//     const {content} = quote;
-//     const quoteStr = document.createElement("h4")
-//     quoteStr.id = "quote-h4"
-//     quoteStr.innerText = `${content}`
-//     categoryProfile.append(quoteStr)
+renderQuote = (quote) => {
+    
+        fetch("https://api.quotable.io/random?tags=inspirational") //trying to add random quote to landing page
+            .then(response => response.json())
+            .then(quote => { //console.log(quote) //----WORKS!!!!!!!!
+                    quoteStr = quote.content;
+                    console.log(quoteStr)  //-------only quote returned--WORKS!!!
+                   //renderQuote(quote) 
+            })
+            
 
-// }
+    const {content} = quoteStr;
+    const quoteStr = document.createElement("h4")
+    quoteStr.id = "quote-h4"
+    quoteStr.innerText = `${content}`
+    categoryProfile.append(quoteStr)
+}
 
 const renderListItem = category => {
     const { strCategory, idCategory } = category;
