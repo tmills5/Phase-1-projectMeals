@@ -150,7 +150,7 @@ const handleSearchByFirstLetterResults = (e) => {
 //---------RENDER FUNCTIONS---------------------//
 
 const renderQuote = () => {
-    debugger
+    //debugger
         fetch("https://api.quotable.io/random?tags=inspirational") //trying to add random quote to landing page
             .then(response => response.json())
             .then(quote => { //console.log(quote) //----WORKS!!!!!!!!

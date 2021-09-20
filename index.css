@@ -38,9 +38,11 @@ nav {
     padding: 2px;
 }
 
+
 .btn-primary {
     margin: 1rem;
     text-align: left;
+    cursor: pointer;
 }
 
 
@@ -58,6 +60,9 @@ nav {
 
  .categoryLi {
      list-style-type: none;
+     font-size: 30px;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     cursor: pointer;
  }
 
  h3 { 
@@ -88,11 +93,7 @@ nav {
      margin: 2px;
      padding: 5px;
      width: 20%;
- }
-
- #dis-like-button {
-     margin: 2rem;
-     padding: 5px;
+     cursor: pointer;
  }
 
  .category-div {
