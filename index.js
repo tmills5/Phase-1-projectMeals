@@ -149,8 +149,8 @@ const handleSearchByFirstLetterResults = (e) => {
 
 //---------RENDER FUNCTIONS---------------------//
 
-renderQuote = () => {
-    
+const renderQuote = () => {
+    debugger
         fetch("https://api.quotable.io/random?tags=inspirational") //trying to add random quote to landing page
             .then(response => response.json())
             .then(quote => { //console.log(quote) //----WORKS!!!!!!!!
@@ -200,7 +200,7 @@ const renderRandom = meal => {
     mealDiv.innerHTML =
         `<h1>${strMeal}</h1>
                 <h3>Origin: ${strArea} <br> Category: ${strCategory}</h3>
-                <a href=${strSource}>Full Recipe<a>
+                <a href=${strSource ? strSource : "yo"}>Full Recipe<a>
                 <p>${strInstructions}</p>
                 <img src=${strMealThumb}>
                 <hr>`
