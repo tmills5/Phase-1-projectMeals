@@ -200,7 +200,7 @@ const renderRandom = meal => {
     mealDiv.innerHTML =
         `<h1>${strMeal}</h1>
                 <h3>Origin: ${strArea} <br> Category: ${strCategory}</h3>
-                <a href=${strSource ? strSource : "yo"}>Full Recipe<a>
+                <a href=${strSource ? strSource : "" }>Full Recipe<a>
                 <p>${strInstructions}</p>
                 <img src=${strMealThumb}>
                 <hr>`
