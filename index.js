@@ -49,14 +49,21 @@ const fetchAllCategories = () => {
     resetPage()
     fetch(listAllMealCategories)
         .then(response => response.json())
-        .then(data => { //console.log(data)//---works!
-            mealCategory = data.categories //pull from within the obj-not sure why? though this was array of obj
+        .then(data => { console.log(data)//---works!
+            mealCategory = data.categories
+                console.log(mealCategory) //pull from within the obj-not sure why? though this was array of obj
+            
             mealCategory.forEach(category => {
-                //console.log(category)
-                renderListItem(category);
-            })
+                 if (category.strCategory.includes('e')) {
+                     renderListItem(category);
+                 }
+                
+             })
+            
         })
 }
+
+
 
 const fetchRandom = () => {
     resetPage()
@@ -171,6 +178,7 @@ const renderListItem = category => {
     categoryLi.id = idCategory
     categoryLi.className = "categoryLi"
     categoryLi.innerText = `${strCategory}`
+    
 
     categoryLi.addEventListener('click', function () {
         resetPage()
@@ -245,6 +253,7 @@ const resetPage = () => {
     categoryItem.innerHTML = ""
     categoryProfile.innerHTML = ""
 }
+
 
 //--------- Attach EVENT LISTENERS-----------------------//
 
